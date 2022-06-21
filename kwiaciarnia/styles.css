@@ -1,0 +1,250 @@
+/*tabela główna*/
+
+body 
+{
+  font-family: Roboto, Arial, sans-serif;
+  max-width: 100rem;
+  padding: 2rem;
+  background-color: lightgreen;
+}
+
+button
+{
+  background-color: rgba(40, 101, 214, 0.75);
+  font-weight: bold;
+}
+
+input 
+{ 
+  text-align: center; 
+}
+
+.wrapper 
+{
+  display: grid; 
+  justify-content: center; 
+  align-content: center; 
+  grid-template-columns: 30px repeat(8, 150px); 
+  grid-template-rows: repeat(5, 30px);
+}
+
+.cos
+{
+  white-space: nowrap;
+  border-width: 1px;
+  border-color: black;
+}
+
+.cos0
+{
+  border-width: 1px;
+  border-color: black;
+  grid-column: span 2;
+}
+
+.cos1
+{
+  border-width: 1px;
+  border-color: black;
+  grid-column: span 2;
+}
+
+.cos1_5
+{
+  font-size: 1.5rem;
+  font-weight: normal;
+  border-width: 1px;
+  border-color: black;
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.cos1_75
+{
+  margin: 0px;
+  font-size: 1rem;
+  font-weight: normal;
+  border-width: 1px;
+  border-color: black;
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.cos2
+{
+  border-width: 1px;
+  border-color: black;
+  background-color: white;
+  padding: 0;
+}
+
+.cos3
+{
+  background-color: rgba(40, 101, 214, 0.75);
+  border-width: 1px;
+  border-color: black;
+  grid-column: span 3;
+  font-size: 3rem;
+  grid-row: span 2;
+}
+
+.cos_bool
+{
+  width: 30px;
+  height: 30px;
+  background: white;
+  margin: 0;
+  border: 0;
+}
+
+.cos_bool1
+{
+  width: 20px;
+  height: 20px;
+  background: white;
+  margin: 0;
+  border: 0;
+}
+
+.cos1:hover
+{
+  background-color: rgba(171, 194, 238, 0.8);
+  cursor: pointer;
+}
+
+.cos1_5:hover
+{
+  background-color: rgba(171, 194, 238, 0.8);
+  cursor: pointer;
+}
+
+.cos1_75:hover
+{
+  background-color: rgba(171, 194, 238, 0.8);
+  cursor: pointer;
+}
+
+.dod
+{
+  font-size: 1.5rem;
+  font-weight: normal;
+  border-width: 1px;
+  border-color: black;
+  background-color: greenyellow;
+  padding: 0;
+  align-content: center;
+}
+
+.dod:hover
+{
+  background-color: rgb(242, 255, 224);
+  cursor: pointer;
+}
+
+.data 
+{
+  width: 50%;
+  height: 50%;
+  overflow-y: auto;
+}
+
+.data-table 
+{
+  width: 100%;
+  justify-content: center; 
+  border-spacing: 0px;
+}
+
+.nwm
+{
+  justify-content: center;
+  color: whitesmoke; 
+  font-weight: normal; 
+  font-size: 1.5rem; 
+  border-width: 1px; 
+  border-color: black; 
+  outline: none; 
+  background-color: red; 
+  cursor: pointer;
+}
+
+.nwm:hover
+{
+  background-color: rgb(253, 176, 176);
+}
+
+/*Popup wyszukiwania liniowego*/
+
+.modal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 100ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 2px;
+  z-index: 10;
+  background-color: lightgreen;
+  width: 1220px;
+  min-width: 10%;
+}
+
+.modal.active {
+  transform: translate(-50%, 0%) scale(1);
+}
+
+.modal-header {
+  padding: 10px;
+  padding-bottom: 0;
+  display: grid; 
+  justify-content: center; 
+  align-content: center; 
+  grid-template-columns: repeat(3, 150px) repeat(4, 180px) 30px; 
+  grid-template-rows: 30px;
+}
+
+.wypelnienie
+{
+  opacity: 0;
+  grid-column: span 4;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+  display: grid; 
+  justify-content: center; 
+  align-content: center; 
+  grid-template-columns: repeat(8, 150px); 
+  grid-template-rows: repeat(2, 30px);
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .8);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}

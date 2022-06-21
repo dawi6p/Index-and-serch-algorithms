@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Kwiaciarnia Dawid Gach</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="code.js"></script>
+  </head>
+  <body>
+    
+    <div class="wrapper">
+
+      <button class = "cos3">Kwiaciarnia</button>
+      <!--<button class = "cos1_5" onclick="usu2()">Usuń co drugi</button>-->
+      <button class = "cos1_5" onclick="loadData()">Wczytaj dane</button>
+      <button class = "cos1" onclick="randomData()">Wczytaj losowe dane</button>
+      <button class = "cos1_5" onclick="show()">Wyszukiwanie</button>
+      <input class = "cos0" type="text" id="rand_no" pattern="^\d+" placeholder="Ilość losowych wierszy" required>
+      
+
+      <button class = "dod" onclick="saveData()"><img src="save-icon-5422.png" width="29" height="29" /></button>
+      <button class = "cos">Nazwa gatunku</button>
+      <button class = "cos">Nazwa rodzaju</button>
+      <button class = "cos">Kolor</button>
+      <button class = "cos">Cena [zł]</button>
+      <button class = "cos">Liczba sztuk</button>
+      <button class = "cos">Waga [g]</button>
+      <button class = "cos">Kolce</button>
+      <button class = "cos">Kwiat w doniczce</button>
+
+      <button class = "dod" onclick="addRow()">+</button>
+      <input class = "cos" type="text" id="input_imie" pattern="^[A-Z][a-z]+" required>
+      <input class = "cos" type="text" id="input_rodzaj" pattern="^[A-Z][a-z]+" required>
+      <input class = "cos" type="text" id="input_kolor" pattern="^[A-Z][a-z]+" required>
+      <input class = "cos" type="text" id="input_cena" pattern="^\d+.\d\d" required>
+      <input class = "cos" type="text" id="input_sztuki" pattern="^\d+" required>
+      <input class = "cos" type="text" id="input_nwm" pattern="^\d+" required>
+      <button class = "cos2"><input class = "cos_bool" type="checkbox" id="input_bool1"></button>
+      <button class = "cos2"><input class = "cos_bool" type="checkbox" id="input_bool2"></button>
+
+      <table id='data_table' class="data-table"></table>
+      
+    </div>
+
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <button onclick="wyszukaj()" class = "cos1_75">Wyszukaj</button>
+        <select class="cos1_75" id="sortowanie">
+          <option value="Liniowe">Liniowe</option>
+          <option value="Binarne">Binarne</option>
+          <option value="Łańcuchowe">Łańcuchowe</option>
+        </select>
+        <button onclick="OrAnd()" class = "cos1_75" id = "OrAnd">AND</button>
+        <button class = "wypelnienie"></button>
+        <button onclick="zamknij()" class="nwm">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <button class = "cos">Nazwa gatunku <input class = "cos_bool1" type="checkbox" id="input_bool01"></button>
+        <button class = "cos">Nazwa rodzaju <input class = "cos_bool1" type="checkbox" id="input_bool02"></button>
+        <button class = "cos">Kolor <input class = "cos_bool1" type="checkbox" id="input_bool03"></button>
+        <button class = "cos">Cena [zł] <input class = "cos_bool1" type="checkbox" id="input_bool04"></button>
+        <button class = "cos">Liczba sztuk <input class = "cos_bool1" type="checkbox" id="input_bool05"></button>
+        <button class = "cos">Waga [g] <input class = "cos_bool1" type="checkbox" id="input_bool06"></button>
+        <button class = "cos">Kolce <input class = "cos_bool1" type="checkbox" id="input_bool07"></button>
+        <button class = "cos">Kwiat w doniczce <input class = "cos_bool1" type="checkbox" id="input_bool08"></button>
+
+        <input class = "cos" type="text" id="input_imie1" pattern="^[A-Z][a-z]+" required>
+        <input class = "cos" type="text" id="input_rodzaj1" pattern="^[A-Z][a-z]+" required>
+        <input class = "cos" type="text" id="input_kolor1" pattern="^[A-Z][a-z]+" required>
+        <input class = "cos" type="text" id="input_cena1" pattern="^\d+.\d\d" required>
+        <input class = "cos" type="text" id="input_sztuki1" pattern="^\d+" required>
+        <input class = "cos" type="text" id="input_nwm1" pattern="^\d+" required>
+        <button class = "cos2"><input class = "cos_bool" type="checkbox" id="input_bool11"></button>
+        <button class = "cos2"><input class = "cos_bool" type="checkbox" id="input_bool21"></button>
+
+        <table id='data_table1' class="data-table"></table>
+
+      </div>
+    </div>
+    <div onclick="zamknij()" id="overlay"></div>
+  </body>
+</html>
